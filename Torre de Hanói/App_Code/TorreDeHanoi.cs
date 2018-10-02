@@ -9,11 +9,16 @@ using System.Web;
 public class TorreDeHanoi {
 
     private string saida;
+    private int discos;
 
-    public TorreDeHanoi() {
-        //
-        // TODO: Adicionar lógica do construtor aqui
-        //
+    public int Discos {
+        get {
+            return discos;
+        }
+
+        set {
+            discos = value;
+        }
     }
 
     private void movetorre(int n, char orig, char dest, char aux) {
@@ -26,9 +31,11 @@ public class TorreDeHanoi {
         movetorre(n - 1, aux, dest, orig);
     }
 
+
     public string main() {
-        int discos=3;
-        movetorre(discos, 'A', 'C', 'B');
-        return saida;
+        movetorre(Discos, 'A', 'C', 'B');
+        string apresent = saida;
+        saida = "";
+        return apresent;
     }
 }

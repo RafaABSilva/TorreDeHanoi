@@ -7,8 +7,17 @@ using System.Web.UI.WebControls;
 
 public partial class Paginas_TorreDeHanoi : System.Web.UI.Page {
     protected void Page_Load(object sender, EventArgs e) {
+ 
+    }
+
+    protected void btn_Click(object sender, EventArgs e) {
         TorreDeHanoi hanoi = new TorreDeHanoi();
 
-        ltr.Text=hanoi.main();
+        hanoi.Discos = Convert.ToInt32(txt.Text);
+
+        ltr.Text = hanoi.main();
+
+        txt.Text = "";
+        
     }
 }
